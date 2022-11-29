@@ -1,2 +1,2 @@
 # homelab
-My home lab in docker
+My home lab in Docker

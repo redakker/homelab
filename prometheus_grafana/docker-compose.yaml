@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+
+  prometheus:
+    image: prom/prometheus
+    user: root
+    container_name: prometheus
+    volumes:
+      - $DIRECORY_FOR_VOLUME/prometheus/:/etc/prometheus/
+      - $DIRECORY_FOR_VOLUME/prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+#    links:
+#      - alertmanager:alertmanager
+    network_mode: host
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    user: root
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - $DIRECORY_FOR_VOLUME/grafana_data:/var/lib/grafana
+      - $DIRECORY_FOR_VOLUME/grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_PASSWORD
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+    network_mode: host
+    restart: unless-stopped

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  portainer:
+    image: portainer/portainer-ee:latest
+    container_name: portainer    
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $DIRECORY_FOR_VOLUME/portainer:/data
+    ports:
+      - 9000:9000
+    restart: unless-stopped
+    network_mode: host

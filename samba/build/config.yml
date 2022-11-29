@@ -1,0 +1,66 @@
+auth:
+  - user: samba
+    group: samba
+    uid: 1000
+    gid: 1000
+    password: samba
+#  - user: baz
+#    group: xxx
+#    uid: 1100
+#    gid: 1200
+#    password_file: /run/secrets/baz_password
+
+global:
+  - "force user = samba"
+  - "force group = samba"
+
+share:
+  - name: public
+    comment: Public
+    path: /samba/public
+    browsable: yes
+    readonly: no
+    guestok: yes
+    veto: no
+    recycle: yes
+#    validusers: samba
+#    writelist: samba
+
+  - name: downloads
+    comment: Downloads
+    path: /samba/downloads
+    browsable: yes
+    readonly: no
+    guestok: yes
+    veto: no
+    recycle: yes
+#    validusers: samba
+#    writelist: samba
+
+
+
+
+# - name: share
+#   path: /samba/share
+#   browsable: yes
+#   readonly: no
+#   guestok: yes
+#   writelist: foo
+#   veto: no
+# - name: foo
+#    path: /samba/foo
+#    browsable: yes
+#    readonly: no
+#    guestok: no
+#    validusers: foo
+#    writelist: foo
+#    veto: no
+#    hidefiles: /_*/
+#  - name: foo-baz
+#    path: /samba/foo-baz
+#    browsable: yes
+#    readonly: no
+#    guestok: no
+#    validusers: foo,baz
+#    writelist: foo,baz
+#    veto: no

@@ -10,6 +10,5 @@ services:
     volumes:
       - ./heimdall/config:/config
     ports:
-      - 8086:80
-      - 443:443
+      - 8086:80      
     restart: unless-stopped

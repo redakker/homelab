@@ -7,7 +7,6 @@ services:
       - php
     ports:
       - 8085:80
-      - 443:443
     volumes:
       - ./nginx/www:/www
       - ./nginx/sites:/etc/nginx/conf.d/    

@@ -5,8 +5,6 @@ services:
     image: nextcloud
     container_name: nextcloud
     hostname: nextcloud
-    depends_on:
-      - db    
     ports:
       - 8888:80/tcp
       - 8888:80/udp

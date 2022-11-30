@@ -10,3 +10,51 @@ Nginx Proxy Manager does the security only from the outside.
 
 Your router should allow two ports from outside/web (80,443) and Nginx Proxy Manager should do the translation for the inside services.
 That is the way how to use https for the inside services.
+
+## Services
+
+- cron
+- database (mysql)
+  - port: 3306
+- adminer (mysql admin frontend)
+  - port: 9080
+- esphome
+  - port: 6052
+- fail2ban
+  - port: host
+- fauxmo
+  - port: host
+- heimdall
+  - port: 8086
+- homeassistant
+  - port: 8123
+- mosquitto
+  - port: 1883, 8883
+- motioneye
+  - port: 8765
+- nextcloud
+  - port: 8888
+- nginx
+  - port: 8085
+- php
+  - port: 9000
+- node-exporter
+  - port: 9100
+- portainer
+  - port: 9000
+- prometheus
+  - port: 9090
+- grafana
+  - port: 3000
+- proxy-manager
+  - port: 80, 443, 81
+- samba
+  - port: 135, 137, 138, 139, 445
+- traccar
+  - port: 8082, 500-5150
+- transmission
+  - port: 9091, 51413
+- uptime-kuma:
+  - port: 3001
+
+ 

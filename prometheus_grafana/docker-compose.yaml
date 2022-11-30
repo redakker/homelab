@@ -7,7 +7,7 @@ services:
     user: root
     container_name: prometheus
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - ./prometheus:/etc/prometheus/
       - ./prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -28,7 +28,7 @@ services:
       - 3000:3000
     volumes:
       - ./grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/provisioning:/etc/grafana/provisioning/
     environment:
       GF_SECURITY_ADMIN_PASSWORD: hyperSecretGrafanaPassword123!
       GF_USERS_ALLOW_SIGN_UP: 'false'

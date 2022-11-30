@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   fail2ban:
     image: crazymax/fail2ban:latest

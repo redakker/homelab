@@ -16,7 +16,7 @@ services:
     image: php:7-fpm
     container_name: php
     ports:
-      - 8085:80
+      - 9101:9000
     volumes:
         - ./nginx/www:/www
     restart: unless-stopped

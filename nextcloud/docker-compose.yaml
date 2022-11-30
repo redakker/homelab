@@ -11,4 +11,3 @@ services:
     volumes:
       - ./nextcloud:/var/www/html
     restart: always
-    network_mode: host

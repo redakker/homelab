@@ -8,7 +8,6 @@ services:
       - 8082:8082
       - 5000-5150:5000-5150
       - 5000-5150:5000-5150/udp
-    network_mode: host
     volumes:
       - /var/log/traccar:/opt/traccar/logs
       - ./conf:/opt/traccar/conf

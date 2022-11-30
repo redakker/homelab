@@ -10,5 +10,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config:/etc/motioneye
       - ./data:/var/lib/motioneye
-    network_mode: host
     restart: unless-stopped

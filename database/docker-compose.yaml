@@ -18,11 +18,9 @@ services:
     ports:
       - 3306:3306
     restart: unless-stopped
-    network_mode: host
 
   adminer:
     image: adminer
     restart: unless-stopped
     ports:
       - 9080:8080
-    network_mode: host

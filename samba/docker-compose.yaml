@@ -21,4 +21,3 @@ services:
       - "SAMBA_WORKGROUP=WORKGROUP"
       - "SAMBA_SERVER_STRING=redsamba"
     restart: unless-stopped
-    network_mode: host

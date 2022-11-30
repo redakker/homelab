@@ -16,9 +16,6 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
     ports:
       - 9090:9090
-#    links:
-#      - alertmanager:alertmanager
-    network_mode: host
     restart: unless-stopped
 
   grafana:
@@ -35,5 +32,4 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: hyperSecretGrafanaPassword123!
       GF_USERS_ALLOW_SIGN_UP: 'false'
-    network_mode: host
     restart: unless-stopped

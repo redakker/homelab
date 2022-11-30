@@ -8,7 +8,7 @@ services:
       - PGID=1000
       - TZ=Europe/Budapest
     volumes:
-      - ./heimdall/config:/config
+      - ./config:/config
     ports:
       - 8086:80      
     restart: unless-stopped

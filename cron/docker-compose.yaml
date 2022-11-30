@@ -10,5 +10,4 @@ services:
       - /etc/cron.hourly:/etc/cron.hourly
       - /etc/cron.monthly:/etc/cron.monthly
       - /etc/cron.weekly:/etc/cron.weekly     
-    restart: unless-stopped
-    network_mode: host
+    restart: unless-stopped    

@@ -9,6 +9,6 @@ for f in ./**/docker-compose.y*ml ; do
 
 done;
 
-echo ' up --build --remove-orphans' >> start.sh
+echo ' up --build --remove-orphans --always-recreate-deps' >> start.sh
 
 chmod +x start.sh

@@ -7,8 +7,8 @@ services:
     user: root
     container_name: prometheus
     volumes:
-      - $DIRECORY_FOR_VOLUME/prometheus/:/etc/prometheus/
-      - $DIRECORY_FOR_VOLUME/prometheus_data:/prometheus
+      - ./prometheus/:/etc/prometheus/
+      - ./prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -30,10 +30,10 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - $DIRECORY_FOR_VOLUME/grafana_data:/var/lib/grafana
-      - $DIRECORY_FOR_VOLUME/grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     environment:
-      GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_PASSWORD
+      GF_SECURITY_ADMIN_PASSWORD: hyperSecretGrafanaPassword123!
       GF_USERS_ALLOW_SIGN_UP: 'false'
     network_mode: host
     restart: unless-stopped

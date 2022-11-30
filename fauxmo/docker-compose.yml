@@ -1,0 +1,24 @@
+version: '3'
+ 
+services:
+  fauxmo:
+    build: ./build
+    # image: servercontainers/fauxmo
+    container_name: fauxmo
+    hostname: fauxmo        
+    environment:
+     # FAUXMO_PLUGIN_COMMANDLINE_DEVICE_1_stuff_to_file: '                { "name": "output stuff to a file", "port": 49915, "on_cmd": "touch testfile.txt", "off_cmd": "rm testfile.txt", "state_cmd": "ls testfile.txt" }'
+
+      FAUXMO_PLUGIN_HOMEASSISTANT_CONFIG: '"ha_host": "192.168.1.10", "ha_port": 8123, "ha_protocol": "http", "ha_token": "HA_TOKEN_CAN_BE_GENERATED_IN_HA",'
+
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_1: '{ "name": "Floor Lamp", "port": 12345, "entity_id": "switch.livingroom_switch" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_2: '{ "name": "Kitchen switch", "port": 12346, "entity_id": "switch.kitchen_switch" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_3: '{ "name": "Workroom switch", "port": 12347, "entity_id": "switch.workroom_switch" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_4: '{ "name": "My computer", "port": 12348, "entity_id": "script.wake_up_reddesk", "domain": "homeassistant" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_5: '{ "name": "TV", "port": 12349, "entity_id": "switch.tv_switch" },'      
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_6: '{ "name": "Kitchen light", "port": 12350, "entity_id": "switch.kitchenlight" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_7: '{ "name": "Default light", "port": 12351, "entity_id": "script.default_light", "domain": "homeassistant" },'
+      FAUXMO_PLUGIN_HOMEASSISTANT_DEVICE_8: '{ "name": "Ambient light", "port": 12352, "entity_id": "script.all_lights_ambient", "domain": "homeassistant" }'
+
+    restart: unless-stopped
+    network_mode: host

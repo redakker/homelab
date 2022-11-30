@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  database:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: database
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=rootPassword!
+      - TZ=Europe/Budapest
+      #- MYSQL_DATABASE=USER_DB_NAME #optional
+      #- MYSQL_USER=MYSQL_USER #optional
+      #- MYSQL_PASSWORD=DATABASE_PASSWORD #optional
+      #- REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql #optional
+    volumes:
+      - ./mysql:/config
+    ports:
+      - 3306:3306
+    restart: unless-stopped
+    network_mode: host
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 9080:8080
+    network_mode: host

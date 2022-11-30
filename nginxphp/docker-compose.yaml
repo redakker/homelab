@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest    
+    container_name: web    
+    depends_on:
+      - php
+    ports:
+      - 8085:80
+      - 443:443
+    volumes:
+      - ./nginx/www:/www
+      - ./nginx/sites:/etc/nginx/conf.d/    
+    restart: unless-stopped
+    network_mode: host
+
+  php: #Listening on port 9000
+    image: php:7-fpm
+    container_name: php
+    restart: always
+    volumes:
+        - ./nginx/www:/www
+    restart: unless-stopped
+    network_mode: host

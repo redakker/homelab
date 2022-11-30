@@ -8,24 +8,9 @@ services:
     depends_on:
       - db    
     ports:
-      - 80:80/tcp
-      - 80:80/udp
+      - 8888:80/tcp
+      - 8888:80/udp
     volumes:
-      - - $DIRECORY_FOR_VOLUME/nextcloud:/var/www/html
+      - ./nextcloud:/var/www/html
     restart: always
-    network_mode: host
-
-  db:
-    image: mysql
-    container_name: mysql
-    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
-    # (this is just an example, not intended to be a production configuration)
-    command: --default-authentication-plugin=mysql_native_password
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: $NEXTCLOUD_PASSWORD
-    volumes:
-      - - $DIRECORY_C$DIRECORY_FOR_VOLUMEONFIG/mysql:/var/lib/mysql
-    restart: unless-stopped
     network_mode: host

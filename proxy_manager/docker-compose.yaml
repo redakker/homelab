@@ -4,7 +4,7 @@ services:
     image: 'jc21/nginx-proxy-manager:latest'    
     ports:
       # These ports are in format <host-port>:<container-port>
-      - '8080:80' # Public HTTP Port
+      - '80:80' # Public HTTP Port
       - '443:443' # Public HTTPS Port
       - '81:81' # Admin Web Port
       # Add any other Stream port you want to expose
@@ -20,7 +20,7 @@ services:
       # DISABLE_IPV6: 'true'
 
     volumes:
-      - $DIRECORY_FOR_VOLUME/proxy-manager/data:/data
-      - $DIRECORY_FOR_VOLUME/proxy-manager/letsencrypt:/etc/letsencrypt
+      - ./proxy-manager/data:/data
+      - ./proxy-manager/letsencrypt:/etc/letsencrypt
     restart: unless-stopped
     network_mode: host

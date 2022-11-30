@@ -1,0 +1,14 @@
+version: '3'
+services:
+  motioneye:
+    image: ccrisan/motioneye:master-amd64
+    hostname: motioneye
+    container_name: motioneye    
+    ports:
+      - 8765:8765
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config:/etc/motioneye
+      - ./data:/var/lib/motioneye
+    network_mode: host
+    restart: unless-stopped

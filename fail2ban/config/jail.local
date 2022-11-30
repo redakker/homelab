@@ -1,0 +1,7 @@
+[sshd]
+enabled = true
+chain = INPUT
+port = ssh
+filter = sshd[mode=aggressive]
+logpath = /var/log/auth.log
+maxretry = 5

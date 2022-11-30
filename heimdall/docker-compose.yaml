@@ -8,8 +8,8 @@ services:
       - PGID=1000
       - TZ=Europe/Budapest
     volumes:
-      - $DIRECORY_FOR_VOLUME/heimdall/config:/config
+      - ./heimdall/config:/config
     ports:
-      - 8080:80
+      - 8086:80
       - 443:443
     restart: unless-stopped

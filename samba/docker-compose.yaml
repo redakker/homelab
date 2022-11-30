@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  samba:
+    build: ./build
+    container_name: samba    
+    ports:
+      - 137:137/udp
+      - 138:138/udp
+      - 135:135/tcp
+      - 139:139/tcp
+      - 445:445/tcp
+
+    volumes:
+      #- ./data:/data
+      - ./samba/public:/samba/public
+      - ./samba/downloads:/samba/downloads
+    environment:
+      - "TZ=Europe/Budapest"
+      - "SAMBA_LOG_LEVEL=1"
+      - "SAMBA_WORKGROUP=WORKGROUP"
+      - "SAMBA_SERVER_STRING=redsamba"
+    restart: unless-stopped
+    network_mode: host

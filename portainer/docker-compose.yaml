@@ -8,7 +8,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - $DIRECORY_FOR_VOLUME/portainer:/data
+      - ./portainer:/data
     ports:
       - 9000:9000
     restart: unless-stopped

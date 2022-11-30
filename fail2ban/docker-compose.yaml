@@ -1,0 +1,14 @@
+version: '3'
+services:
+  fail2ban:
+    image: crazymax/fail2ban:latest
+    container_name: fail2ban
+    hostname: fail2ban    
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./config:/etc/fail2ban
+      - /var/log:/var/log
+    restart: unless-stopped
+    network_mode: host

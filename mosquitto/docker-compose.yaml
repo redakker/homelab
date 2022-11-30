@@ -11,6 +11,6 @@ services:
       - ./data:/mosquitto/data
       - /var/log/mosquitto:/mosquitto/logs
       - /var/run:/var/run
-      - ./conf:/mosquitto/config
+      - ./config:/mosquitto/config
     restart: unless-stopped
     network_mode: host

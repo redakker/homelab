@@ -3,7 +3,6 @@ services:
   homeassistant:
     container_name: homeassistant
     hostname: homeassistant
-    depends_on:
     image: homeassistant/home-assistant:stable
     volumes:
       - ./config:/config    

@@ -11,6 +11,12 @@ Nginx Proxy Manager does the security only from the outside.
 Your router should allow two ports from outside/web (80,443) and Nginx Proxy Manager should do the translation for the inside services.
 That is the way how to use https for the inside services.
 
+## How to start
+- install docker and docker-compose to the host machine
+- clone this repository to one of the folders
+- add execute role to the generate.sh (chmod +x generate.sh) -> start.sh is created
+- run start.sh -> wait till all container is up
+
 ## Services
 
 - cron

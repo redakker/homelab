@@ -3,7 +3,7 @@
 echo '#!/bin/bash' > start.sh
 echo 'docker-compose \' >> start.sh
 
-for f in ./**/docker-compose.y*ml ; do
+for f in $(pwd)/**/docker-compose.y*ml ; do
 
     echo '-f '$f' \' >> start.sh
 

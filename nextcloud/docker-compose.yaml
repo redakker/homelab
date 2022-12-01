@@ -9,5 +9,5 @@ services:
       - 8888:80/tcp
       - 8888:80/udp
     volumes:
-      - ./nextcloud:/var/www/html
+      - /mnt/homelab/nextcloud:/var/www/html
     restart: always

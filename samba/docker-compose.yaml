@@ -12,10 +12,10 @@ services:
       - 445:445/tcp
 
     volumes:
-      #- ./data:/data
-      - /mnt/homelab/public:/samba/public
+      #- ./data:/data      
       - /mnt/homelab/common:/samba/common
       - /mnt/homelab/misc:/samba/misc
+      - /mnt/homelab/downloads:/samba/downloads:z
     environment:
       - "TZ=Europe/Budapest"
       - "SAMBA_LOG_LEVEL=1"

@@ -7,10 +7,10 @@ services:
     ports:
       - 8123:8123
     volumes:
-      - /mnt/homelab/downloads:/media:z    
+      - /mnt/homelab/downloads:/media:z
     environment:
       - MINIDLNA_MEDIA_DIR=/media
-      - MINIDLNA_FRIENDLY_NAME=dockermedia
+      - MINIDLNA_FRIENDLY_NAME=redmedia
     restart: unless-stopped
     network_mode: host
   

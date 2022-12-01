@@ -15,16 +15,16 @@ global:
   - "force group = samba"
 
 share:
-  - name: public
-    comment: Public
-    path: /samba/public
-    browsable: yes
-    readonly: no
-    guestok: yes
-    veto: no
-    recycle: yes
-#    validusers: samba
-#    writelist: samba
+#  - name: public
+#    comment: Public
+#    path: /samba/public
+#    browsable: yes
+#    readonly: no
+#    guestok: yes
+#    veto: no
+#    recycle: yes
+##    validusers: samba
+##    writelist: samba
 
   - name: common
     comment: Common
@@ -38,6 +38,15 @@ share:
   - name: misc
     comment: Misc
     path: /samba/misc
+    browsable: yes
+    readonly: no
+    guestok: yes
+    veto: no
+    recycle: yes
+
+  - name: downloads
+    comment: Downloads
+    path: /samba/downloads
     browsable: yes
     readonly: no
     guestok: yes

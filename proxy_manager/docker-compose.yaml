@@ -21,6 +21,7 @@ services:
       # DISABLE_IPV6: 'true'
 
     volumes:
-      - ./proxy-manager/data:/data
-      - ./proxy-manager/letsencrypt:/etc/letsencrypt
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+      - /var/log/nginx:/data/logs
     restart: unless-stopped

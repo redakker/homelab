@@ -26,9 +26,18 @@ share:
 #    validusers: samba
 #    writelist: samba
 
-  - name: downloads
-    comment: Downloads
-    path: /samba/downloads
+  - name: common
+    comment: Common
+    path: /samba/common
+    browsable: yes
+    readonly: no
+    guestok: yes
+    veto: no
+    recycle: yes
+  
+  - name: misc
+    comment: Misc
+    path: /samba/misc
     browsable: yes
     readonly: no
     guestok: yes

@@ -13,8 +13,9 @@ services:
 
     volumes:
       #- ./data:/data
-      - ./samba/public:/samba/public
-      - ./samba/downloads:/samba/downloads
+      - /mnt/homelab/public:/samba/public
+      - /mnt/homelab/common:/samba/common
+      - /mnt/homelab/misc:/samba/misc
     environment:
       - "TZ=Europe/Budapest"
       - "SAMBA_LOG_LEVEL=1"

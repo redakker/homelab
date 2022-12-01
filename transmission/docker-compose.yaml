@@ -14,9 +14,10 @@ services:
       #- WHITELIST=iplist #optional
       #- HOST_WHITELIST=dnsnane list #optional
     volumes:
-      - ./transmission/config:/config
-      - ./transmission/downloads:/downloads
-      - ./transmission/watch:/watch
+      - ./config:/config
+      - /mnt/homelab/downloads:/downloads/complete
+      - /mnt/homelab/incomplete_downloads:/downloads/incomplete
+      - /mnt/homelab/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413

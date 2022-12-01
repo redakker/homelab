@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  minidlna:
+    container_name: minidlna
+    hostname: minidlna
+    image: vladgh/minidlna
+    ports:
+      - 8123:8123
+    volumes:
+      - /mnt/homelab/downloads:/media:z    
+    environment:
+      - MINIDLNA_MEDIA_DIR=/media
+      - MINIDLNA_FRIENDLY_NAME=dockermedia
+    restart: unless-stopped
+    network_mode: host
+  

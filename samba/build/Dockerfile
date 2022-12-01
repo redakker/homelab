@@ -21,6 +21,7 @@ RUN apk --update --no-cache add \
 COPY entrypoint.sh /entrypoint.sh
 RUN mkdir -p /data
 COPY config.yml /data/
+RUN chmod +x /entrypoint.sh
 
 #EXPOSE 445
 EXPOSE 137/udp 138/udp 135/tcp 139/tcp 445/tcp

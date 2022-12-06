@@ -14,7 +14,8 @@ That is the way how to use https for the inside services.
 ## How to start
 - install docker and docker-compose to the host machine
 - clone this repository to one of the folders
-- add execute role to the generate.sh (chmod +x generate.sh) -> start.sh is created
+- add execute role to the generate.sh (chmod +x generate.sh) and run it
+  - generator gives a possibility to run an interactive menu, where you can choose which service will be started with the start.sh (ticket [#1](/../../issues/1))
 - run start.sh -> wait till all container is up
 
 ## Services

@@ -31,6 +31,8 @@ That is the way how to use https for the inside services.
   - port: host
 - fauxmo
   - port: host
+- filebrowser
+  - port: 8090
 - heimdall
   - port: 8086
 - homeassistant

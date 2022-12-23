@@ -4,11 +4,12 @@ services:
     container_name: homeassistant
     hostname: homeassistant
     image: homeassistant/home-assistant:stable
-    ports:
-      - 8123:8123
+#    ports:
+#      - 8123:8123
     volumes:
       - ./config:/config    
     environment:
       - TZ=Europe/Budapest
     restart: unless-stopped
     privileged: true
+    network_mode: host

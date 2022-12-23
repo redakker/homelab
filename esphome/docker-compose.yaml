@@ -4,9 +4,10 @@ services:
   esphome:
     container_name: esphome
     image: esphome/esphome
-    ports:
-      - 6052:6052
+#    ports:
+#      - 6052:6052
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
+    network_mode: host
